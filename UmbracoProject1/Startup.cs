@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using Umbraco.Cms.Core.DependencyInjection;
+using Umbraco.Cms.Core.IO;
 using Umbraco.Extensions;
 
 namespace UmbracoProject1
@@ -42,7 +43,7 @@ namespace UmbracoProject1
                 .AddBackOffice()
                 .AddWebsite()
                 .AddComposers()
-                //.AddAzureBlobMediaFileSystem()
+                .AddAzureBlobMediaFileSystem()
                 .Build();
         }
 
@@ -63,7 +64,7 @@ namespace UmbracoProject1
                 {
                     u.UseBackOffice();
                     u.UseWebsite();
-                    //u.UseAzureBlobMediaFileSystem();
+                    u.UseAzureBlobMediaFileSystem();
                 })
                 .WithEndpoints(u =>
                 {
